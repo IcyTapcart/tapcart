@@ -14,7 +14,7 @@ function calc_d_num(num) {
   return d_num === 0 ? d_num : d_num + "M";
 }
 
-function sliderOnChange() {
+function sliderOnChange(data) {
   var convertedRev;
   data.from_pretty = parseFloat(data.from_pretty);
   if (data.from_pretty == 0) {
