@@ -1,5 +1,4 @@
 function calc_d_num(num) {
-  console.log("calc_d_num loaded from gh");
   var num, d_num;
   if (num <= 30) {
     d_num = num / 10;
@@ -197,4 +196,25 @@ function sliderOnChange(data) {
       ((data.from_pretty * 1000000 * 0.0009) / 12).toFixed(0)
     ).toLocaleString("en-US")
   );
+}
+
+function sliderOnStart() {
+  var val;
+  $(".irs-grid-text").each(function () {
+    val = $(this).text();
+    if (
+      val !== "0" &&
+      val !== "1M" &&
+      val !== "3M" &&
+      val !== "10M" &&
+      val !== "50M" &&
+      val !== "100M"
+    ) {
+      $(this).text("");
+    }
+    $(".irs-grid-pol.small").hide();
+    $(
+      '.irs-grid-pol[style*="left: 20%"], .irs-grid-pol[style*="left: 40%"], .irs-grid-pol[style*="left: 60%"], .irs-grid-pol[style*="left: 80%"], .irs-grid-pol[style*="left: 90%"]'
+    ).hide();
+  });
 }
