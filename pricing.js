@@ -147,7 +147,7 @@ function sliderOnChange(data) {
     $(".plan-name.ultimate-plan").show();
     $("#MonthlyFee1").text(Math.trunc(c2).toLocaleString("en-US"));
   } else if (data.from_pretty >= 3 && data.from_pretty < 100) {
-    if (data.from_pretty >= 25) {
+    if (data.from_pretty >= 20) {
       $(".inner-card-wrap.enterprise").addClass("dt");
       $(".new-price-card.enterprise").addClass("dt");
       $(".combo-cd-wrap.ent.dt").addClass("focus");
