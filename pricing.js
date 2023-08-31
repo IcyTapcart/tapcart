@@ -53,45 +53,11 @@ function sliderOnChange(data) {
   c1 = 200 + ((Ba * 1000000) / 12) * 0.025;
   c1b = 200 + ((Bb * 1000000) / 12) * 0.025;
 
-  // C2
-  if (gmv < 27000) {
-    c2 = 400 + (gmv / 12) * 0.025;
-  } else if (gmv >= 27000 && gmv < 108000) {
-    c2 = 400 + (gmv / 12) * 0.0225;
-  } else if (gmv >= 108000 && gmv < 264000) {
-    c2 = 400 + (gmv / 12) * 0.02;
-  } else if (gmv >= 264000 && gmv < 504000) {
-    c2 = 400 + (gmv / 12) * 0.019;
-  } else if (gmv >= 504000) {
-    c2 = 400 + (gmv / 12) * 0.018;
-  }
-  if (Bb_gmv < 27000) {
-    c2b = 400 + (Bb_gmv / 12) * 0.025;
-  } else if (Bb_gmv >= 27000 && Bb_gmv < 108000) {
-    c2b = 400 + (Bb_gmv / 12) * 0.0225;
-  } else if (Bb_gmv >= 108000 && Bb_gmv < 264000) {
-    c2b = 400 + (Bb_gmv / 12) * 0.02;
-  } else if (Bb_gmv >= 264000 && Bb_gmv < 504000) {
-    c2b = 400 + (Bb_gmv / 12) * 0.019;
-  } else if (Bb_gmv >= 504000) {
-    c2b = 400 + (Bb_gmv / 12) * 0.018;
-  }
-
-  // C3
-  if (gmv < 2640000) {
-    c3 = 1000 + (gmv / 12) * 0.0175;
-  } else if (gmv >= 2640000 && gmv < 5040000) {
-    c3 = 1000 + (gmv / 12) * 0.016;
-  } else if (gmv >= 5040000) {
-    c3 = 1000 + (gmv / 12) * 0.015;
-  }
-  if (Bb_gmv < 2640000) {
-    c3b = 1000 + (Bb_gmv / 12) * 0.0175;
-  } else if (Bb_gmv >= 2640000 && Bb_gmv < 5040000) {
-    c3b = 1000 + (Bb_gmv / 12) * 0.016;
-  } else if (Bb_gmv >= 5040000) {
-    c3b = 1000 + (Bb_gmv / 12) * 0.015;
-  }
+  // v4.1 update:
+  c2 = 400 + ((Ba * 1000000) / 12) * 0.025;
+  c2b = 400 + ((Bb * 1000000) / 12) * 0.025;
+  c3 = 1000 + ((Ba * 1000000) / 12) * 0.0175;
+  c3b = 1000 + ((Bb * 1000000) / 12) * 0.0175;
 
   if (data.from_pretty == 0) {
     $(".new-price-card.core").removeClass("disabled-card");
@@ -196,6 +162,8 @@ function sliderOnChange(data) {
   $("#c1b").text("$" + Math.trunc(c1b).toLocaleString("en-US"));
   $("#c2b").text("$" + Math.trunc(c2b).toLocaleString("en-US"));
   $("#c3b").text("$" + Math.trunc(c3b).toLocaleString("en-US"));
+
+  console.log(c1b, c2b, c3)
 
   $(".sms-savings.high").text(
     parseFloat(
