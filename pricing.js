@@ -26,8 +26,8 @@ function sliderOnChange(data) {
     $("#AnnualRevenue").text(convertedRev);
   }
 
-  var Ba = data.from_pretty * 0.129;
-  var Bb = (Ba / 0.129) * 0.225;
+  var Ba = data.from_pretty * 0.11;
+  var Bb = (Ba / 0.11) * 0.225;
   if (Ba < 1) {
     $(".gmv-in-card").text("$" + parseFloat((Ba * 1000).toFixed(1)) + "k");
   } else {
