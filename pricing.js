@@ -93,7 +93,7 @@ function sliderOnChange(data) {
     $(".plan-name").hide();
     $(".plan-name.core-plan").show();
     $("#MonthlyFee1").text(Math.trunc(c1).toLocaleString("en-US"));
-  } else if (data.from_pretty >= 1 && data.from_pretty < 3) {
+  } else if (data.from_pretty >= 1 && data.from_pretty < 10) {
     $(".new-price-card.ultimate").removeClass("disabled-card");
     $(".new-price-card.core").addClass("disabled-card");
     $(".annual-revenue-over-maximum").hide();
@@ -112,7 +112,7 @@ function sliderOnChange(data) {
     $(".plan-name").hide();
     $(".plan-name.ultimate-plan").show();
     $("#MonthlyFee1").text(Math.trunc(c2).toLocaleString("en-US"));
-  } else if (data.from_pretty >= 3 && data.from_pretty < 100) {
+  } else if (data.from_pretty >= 10 && data.from_pretty < 100) {
     if (data.from_pretty >= 20) {
       $(".inner-card-wrap.enterprise").addClass("dt");
       $(".new-price-card.enterprise").addClass("dt");
@@ -138,7 +138,7 @@ function sliderOnChange(data) {
     $(".pricing-sum-up").hide();
   }
 
-  if (data.from_pretty < 3) {
+  if (data.from_pretty < 10) {
     $("#tour").show();
   } else {
     $(".plan-name").hide();
